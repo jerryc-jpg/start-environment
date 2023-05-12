@@ -1,8 +1,10 @@
 const port = process.env.PORT || 8080;
 const app = require('./app');
-const {db} = require('./db')
+const { syncAndSeed } = require('./db')
 
-db.sync().then(() => {
+
+syncAndSeed().then(() => {
     app.listen(port, () => console.log(`listening on port ${port}`));
-})
+}).catch (err => console.error('Database sync error:', err));
+
 

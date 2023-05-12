@@ -1,10 +1,10 @@
-import {configureStore} from "@reduxjs/toolkit";
-import characters from "./reducers/character";
+import { configureStore } from "@reduxjs/toolkit";
+import players from "./reducers/players";
 
 const store = configureStore({
-    reducer:{
-        characters: characters
-    }
-})
+  reducer: {
+    players: players,
+  },
+});
 
 export default store;
